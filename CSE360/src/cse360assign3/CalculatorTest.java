@@ -81,11 +81,73 @@ public class CalculatorTest{
 	
 	/** This test is for the getHistory method.*/
 	@Test
-	public void testGetHistory(){
-
-		assertEquals("",calc.getHistory());
+	public void testGetHistoryEmpty(){
+		
+		calc.getHistory();
+		
+		assertEquals("0",calc.getHistory());
 	}
 	
+	/** This test is for the getHistory method.*/
+	@Test
+	public void testGetHistoryAdd(){
+		
+		calc.add(5);
+		calc.getHistory();
+		
+		assertEquals("0 + 5",calc.getHistory());
+	}
 	
+	/** This test is for the getHistory method.*/
+	@Test
+	public void testGetHistorySubtract(){
+		
+		calc.subtract(5);
+		calc.getHistory();
+		
+		assertEquals("0 - 5",calc.getHistory());
+	}
+	
+	/** This test is for the getHistory method.*/
+	@Test
+	public void testGetHistoryMultiply(){
+		
+		calc.multiply(5);
+		calc.getHistory();
+		
+		assertEquals("0 * 5",calc.getHistory());
+	}
 
+	/** This test is for the getHistory method.*/
+	@Test
+	public void testGetHistoryDivide(){
+		
+		calc.divide(5);
+		calc.getHistory();
+		
+		assertEquals("0 / 5",calc.getHistory());
+	}
+	
+	/** This test is for the getHistory method.*/
+	@Test
+	public void testGetHistoryDivideByZero(){
+		
+		calc.divide(0);
+		calc.getHistory();
+		
+		assertEquals("0 / 0",calc.getHistory());
+	}
+	
+	/** This test is for the getHistory method.*/
+	@Test
+	public void testGetHistoryUsingAllOperations(){
+		
+		calc.add(5);
+		calc.subtract(2);
+		calc.multiply(2);
+		calc.divide(3);
+		calc.getHistory();
+		
+		assertEquals("0 + 5 - 2 * 2 / 3",calc.getHistory());
+	}
 }
