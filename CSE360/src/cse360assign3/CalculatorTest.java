@@ -29,37 +29,61 @@ public class CalculatorTest{
 	/** This test is for the getTotal method*/
 	@Test
 	public void testGetTotal(){
-		fail("Not yet implemented");
+		
+		assertEquals(0,calc.getTotal());
+		
 	}
 	
 	/** This test is for the add method.*/
 	@Test
 	public void testAdd(){
-		fail("Not yet implemented");
+		
+		calc.add(5);
+		
+		assertEquals(5,calc.getTotal());
 	}
 	
 	/** This test is for the subtract method.*/
 	@Test
 	public void testSubtract(){
-		fail("Not yet implemented");
+		
+		calc.subtract(5);
+		
+		assertEquals(-5,calc.getTotal());
 	}
 	
 	/** This test is for the multiply method.*/
 	@Test
 	public void testMultiply(){
-		fail("Not yet implemented");
+
+		calc.add(1);
+		calc.multiply(5);
+		
+		assertEquals(5,calc.getTotal());
+	}
+	
+	/** This test is for the divide method dividing by zero.*/
+	@Test
+	public void testDivideByZero(){
+
+		assertEquals(0,calc.getTotal());
 	}
 	
 	/** This test is for the divide method.*/
 	@Test
 	public void testDivide(){
-		fail("Not yet implemented");
+		
+		calc.add(5);
+		calc.divide(5);
+		
+		assertEquals(1,calc.getTotal());
 	}
 	
 	/** This test is for the getHistory method.*/
 	@Test
 	public void testGetHistory(){
-		fail("Not yet implemented");
+
+		assertEquals("",calc.getHistory());
 	}
 	
 	
